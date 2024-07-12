@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Image Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            margin: 20px auto;
+            max-width: 600px;
+            align-items: left;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Table</h1>
+        <form id="imageForm">
+            <h4 style="text-align: left;">viewer</h4>
+            <label for="imageCount">Number of Images:</label>
+            <input type="text" id="imageCount" value="4">
+            <button type="button" onclick="displayTable()">Display Images</button>
+        </form>
+        <div id="error" class="error"></div>
+        <table id="imageTable">
+            <thead>
+                <tr>
+                    <th style="top: left;">Images</th>
+                    
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    
+    <script>
+        function displayTable() {
+            const imageCountInput = document.getElementById('imageCount');
+            const imageCount = parseInt(imageCountInput.value);
+            const errorDiv = document.getElementById('error');
+            const tableBody = document.getElementById('imageTable').querySelector('tbody');
+
+            
+            errorDiv.textContent = '';
+            tableBody.innerHTML = '';
+
+    
+            if (imageCount % 2 !== 0) {
+                errorDiv.textContent = 'Invalid value';
+                return;
+            }
+
+            
+            for (let i = 0; i < imageCount; i += 2) {
+                const row = document.createElement('tr');
+                const cell1 = document.createElement('td');
+                const cell2 = document.createElement('td');
+                const img1 = document.createElement('img');
+                const img2 = document.createElement('img');
+
+                img1.src = tom4.jpg;
+                img2.src = `https://via.placeholder.com/100?text=Image+${i + 2}`;
+                cell1.appendChild(img1);
+                cell2.appendChild(img2);
+                row.appendChild(cell1);
+                row.appendChild(cell2);
+                tableBody.appendChild(row);
+                
+
+                img1.src =image1.html;
+                img2.src =tom2.jpg;
+                img1.src =jerry.jpg;
+                
+
+            }
+
+        
+        }
+
+    </script>
+</body>
+</html>
